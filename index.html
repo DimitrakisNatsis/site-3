@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUELS APOSTOLOU I.K.E. | Premium Energy Retail & Fleet Solutions</title>
+    <meta name="description" content="Leading gasoline stations and fuel dealers based in Ilion Attikis, Greece. Providing premium energy retail and digital fleet management solutions.">
+    <style>
+        /* DESIGN SYSTEM: MODERN ENERGY & AUTOMOTIVE TECH */
+        :root {
+            --primary: #0A192F;         /* Deep Petrol Blue */
+            --primary-light: #112240;
+            --accent: #10B981;          /* Eco Energy Green */
+            --accent-hover: #059669;
+            --bg-base: #F8FAFC;         /* Light Slate Gray */
+            --bg-white: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
+            --border-color: #E2E8F0;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-display: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-base);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 1. NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* 2. HERO SECTION */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 10%;
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(17, 34, 64, 0.95) 100%);
+            background-color: var(--primary);
+            position: relative;
+            color: var(--bg-white);
+            overflow: hidden;
+        }
+
+        /* Abstract Highway/Speed Grid Background */
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: 
+                linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+            transform: perspective(600px) rotateX(60deg);
+            transform-origin: bottom;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border: 1px solid var(--accent);
+            font-family: var(--font-display);
+        }
+
+        header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #CBD5E1;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        /* 3. ABOUT SECTION */
+        .section {
+            padding: 100px 10%;
+        }
+
+        .bg-white {
+            background-color: var(--bg-white);
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-header .line {
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: var(--bg-base);
+            padding: 40px;
+            border-radius: 8px;
+            border-left: 6px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* 4. RETAIL & FUEL EXPERTISE */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 50px 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--primary);
+            transition: background 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover::before {
+            background: var(--accent);
+        }
+
+        .service-icon {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-family: var(--font-display);
+            font-weight: 800;
+        }
+
+        /* 5. CORPORATE APP PROMO (CRITICAL FOR GOOGLE PLAY CONSOLE) */
+        .app-promo {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .app-content h2 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--bg-white);
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .app-content p {
+            font-size: 1.1rem;
+            color: #CBD5E1;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #E2E8F0;
+        }
+
+        .feature-list li::before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--accent);
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .app-visual {
+            height: 100%;
+            min-height: 350px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(10, 25, 47, 0.8) 100%);
+            border: 2px dashed rgba(16, 185, 129, 0.4);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* 6. CONTACT & CORPORATE INFO (MATCHES D&B EXACTLY) */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .corp-details {
+            background: var(--bg-white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .corp-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .detail-row {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .detail-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 1.05rem;
+            color: var(--primary);
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            background: var(--bg-white);
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            background: var(--bg-base);
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--bg-white);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: 16px 0;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-light);
+        }
+
+        /* 7. FOOTER & LEGAL */
+        footer {
+            background: #060F1A;
+            color: #94A3B8;
+            padding: 80px 10% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 50px;
+        }
+
+        .footer-col h4 {
+            color: var(--bg-white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links { display: none; }
+            .about-grid, .app-promo, .contact-container { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
+            .app-promo { padding: 80px 5%; }
+            .app-visual { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">FUELS APOSTOLOU <span>I.K.E.</span></div>
+        <div class="nav-links">
+            <a href="#about">Corporate</a>
+            <a href="#sectors">Energy Retail</a>
+            <a href="#mobile-app">Fuel Connect App</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="hero-content">
+            <div class="hero-badge">Premium Fuel Dealers & Retail</div>
+            <h1>Powering Journeys Across Sterea Ellada.</h1>
+            <p>A leading enterprise in Greece providing high-quality gasoline station networks, reliable energy retail, and advanced digital fleet management solutions.</p>
+            <a href="#mobile-app" class="btn-primary">Discover Our Digital Services</a>
+        </div>
+    </header>
+
+    <section id="about" class="section bg-white">
+        <div class="section-header">
+            <h2>Corporate Overview</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong>FUELS APOSTOLOU SOLE SHAREHOLDER CO. I.K.E.</strong> is a prominent energy retail enterprise established in Ilion Attikis, Greece. Guided by our Key Principal, Antonios Christos Tsigkelis, we have built a trusted network within the Gasoline Stations and Fuel Dealers sector.</p>
+                <p>We are more than just a fuel provider. Operating within the broader Retail Trade sector, our service stations act as comprehensive retail hubs, ensuring that both commercial fleet drivers and everyday consumers receive top-tier fuels, automotive accessories, and convenience goods securely and efficiently.</p>
+            </div>
+            <div class="highlight-box">
+                <h3 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 15px; text-transform: uppercase; font-family: var(--font-display); font-weight: 800;">Strategic Energy Retail</h3>
+                <p style="color: var(--text-muted); line-height: 1.6;">Our corporate strategy focuses on the modernization of gasoline service stations. We are actively integrating smart technology to streamline fuel dispensing, B2B fleet invoicing, and customer loyalty programs across our Greek network.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="sectors" class="section">
+        <div class="section-header">
+            <h2>Our Operational Focus</h2>
+            <div class="line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">[ EN-01 ]</div>
+                <h3>Gasoline Stations</h3>
+                <p>Operation of modern, safe, and efficient service stations providing premium unleaded fuels, diesel, and alternative energy options for everyday drivers.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">[ EN-02 ]</div>
+                <h3>Commercial Fuel Dealing</h3>
+                <p>B2B fuel distribution and fleet management solutions. We supply high-volume fuel for logistics companies with transparent pricing and detailed invoicing.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">[ EN-03 ]</div>
+                <h3>Convenience Retail</h3>
+                <p>Integrated retail trade within our stations, offering automotive parts, travel accessories, and a wide selection of convenience goods for travelers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="mobile-app" class="app-promo">
+        <div class="app-content">
+            <h2>Apostolou Fuel Connect App</h2>
+            <p>To modernize the fueling experience and provide advanced B2B fleet solutions, <strong>FUELS APOSTOLOU SOLE SHAREHOLDER CO. I.K.E. has launched a proprietary mobile application published on the Google Play Store.</strong></p>
+            <p>The <em>Apostolou Fuel Connect</em> app is designed for both individual drivers and corporate fleet managers. It enables contactless payments directly at the pump, digital loyalty points tracking, and real-time fuel consumption reports for logistics companies.</p>
+            
+            <ul class="feature-list">
+                <li>Contactless mobile payments directly at the fuel pump.</li>
+                <li>Digital loyalty card integration and reward points tracking.</li>
+                <li>B2B Fleet Portal: manage driver limits and digital invoices.</li>
+                <li>Interactive map locating the nearest operational Apostolou stations.</li>
+            </ul>
+            
+            <a href="#contact" class="btn-outline">Google Play Developer Support</a>
+        </div>
+        <div class="app-visual">
+            <div style="text-align: left; width: 100%;">
+                <p style="color: var(--accent); font-family: monospace; font-size: 0.9rem; margin-bottom: 10px;">> INIT APOSTOLOU_FUEL_SYSTEM</p>
+                <p style="color: rgba(255,255,255,0.7); font-family: monospace; font-size: 0.85rem; line-height: 1.8;">
+                    CONNECTING TO STATION PUMPS... [OK]<br>
+                    VERIFYING FLEET ACCOUNTS... [OK]<br>
+                    SYNCING LOYALTY DATABASE... [OK]<br>
+                    <br>
+                    <span style="color: #10B981;">MOBILE PAYMENT GATEWAY ONLINE</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-white">
+        <div class="section-header">
+            <h2>Corporate Verification & Contact</h2>
+            <div class="line"></div>
+        </div>
+        
+        <div class="contact-container">
+            <div class="corp-details">
+                <h3>Entity Registration</h3>
+                
+                <div class="detail-row">
+                    <div class="detail-label">Legal Entity Name</div>
+                    <div class="detail-value">FUELS APOSTOLOU SOLE SHAREHOLDER CO. I.K.E.</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Key Principal</div>
+                    <div class="detail-value">Antonios Christos Tsigkelis</div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Industry Classifications</div>
+                    <div class="detail-value" style="font-size: 0.95rem;">
+                        • Gasoline Stations<br>
+                        • Gasoline Stations and Fuel Dealers<br>
+                        • Retail Trade<br>
+                        • Gasoline service stations
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Registered Headquarters</div>
+                    <div class="detail-value">
+                        Fylis 105 13122, Ilion Attikis<br>
+                        Sterea Ellada and Evoia<br>
+                        Greece
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-label">Official Communication</div>
+                    <div class="detail-value" style="color: var(--primary);">info@fuelsapostolousoleshareholder.cloud</div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3 style="font-size: 1.4rem; margin-bottom: 20px; color: var(--primary);">Direct Inquiry</h3>
+                <form onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Full Name / Company Name" required>
+                    <input type="email" placeholder="Corporate Email" required>
+                    <input type="text" placeholder="Subject (e.g., Fleet Account, App Support)">
+                    <textarea placeholder="How can our energy retail or app support team assist you?" required></textarea>
+                    <button type="submit" class="btn-submit">Send Official Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: var(--bg-white); margin-bottom: 20px; font-size: 1.2rem;">FUELS APOSTOLOU <span style="color: var(--accent);">I.K.E.</span></div>
+                <p>Driving the future of energy retail and digital fuel management in Sterea Ellada, Greece.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Mobile App Support</h4>
+                <ul>
+                    <li><a href="#">Google Play Publisher Profile</a></li>
+                    <li><a href="#">Report an App Bug / Payment Issue</a></li>
+                    <li><a href="#"><strong>Request Account & Data Deletion</strong></a></li>
+                    <li><a href="#">App User Guide (B2B/B2C)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Legal & Compliance</h4>
+                <ul>
+                    <li><a href="#">Terms of Service (Fuel Retail)</a></li>
+                    <li><a href="#">Privacy Policy (GDPR Compliant)</a></li>
+                    <li><a href="#">Fleet Supply Agreements</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FUELS APOSTOLOU SOLE SHAREHOLDER CO. I.K.E. Registered in Greece. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
